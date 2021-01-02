@@ -1,5 +1,5 @@
 {
-  "name": "notification-service",
+  "name": "aws-lambda-notification-service",
   "version": "1.0.0",
   "description": "Serverless Lambda Function Notification service",
   "author": "Maximiliano Suster <mxsstr93@gmail.com>",

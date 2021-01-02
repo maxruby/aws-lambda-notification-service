@@ -1,17 +1,29 @@
-# Codingly.io: Base Serverless Framework Template
+# Serverless Lambda Notification Service
 
-https://codingly.io
+## Description
+A simple Notification service consisting of a serverless lambda function that sends emails in unordered queue using the AWS SQS and SES, based on the [Serverless framework Bootcamp](https://www.udemy.com/course/serverless-framework/).
 
-## What's included
-* Folder structure used consistently across our projects.
-* [serverless-pseudo-parameters plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Allows you to take advantage of CloudFormation Pseudo Parameters.
-* [serverless-bundle plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Bundler based on the serverless-webpack plugin - requires zero configuration and fully compatible with ES6/ES7 features.
+## Dependencies
+* [serverless-pseudo-parameters plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Support for CloudFormation Pseudo Parameters.
+* [serverless-bundle plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Webpack plugin providing zero configuration for bundling JavaScript including modern ES6/ES7 features.
 
-## Getting started
+## Setup
+Created using [codingly.io](https://github.com/codingly-io/sls-base) as follows:
+
+```shell
+$ sls create --name notification-service --template-url https://github.com/codingly-io/sls-base
+$ cd notification-service
+$ npm install
 ```
-sls create --name YOUR_PROJECT_NAME --template-url https://github.com/codingly-io/sls-base
-cd YOUR_PROJECT_NAME
-npm install
+
+## Development
+Trigger manually sending an e-mail via the SQS which disptaches the SES handler lambda function sendMail:
+
+```shell
+$ sls invoke -f notification-service -l
 ```
 
-You are ready to go!
+## Deployment
+```shell
+$ sls deploy -v
+```
